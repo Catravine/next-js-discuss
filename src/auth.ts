@@ -18,13 +18,13 @@ export const { handlers: {GET, POST}, auth, signOut, signIn } =  NextAuth({
       clientSecret: GITHUB_CLIENT_SECRET
     })
   ],
-  callbacks: {
-    // Usually not needed, here were are fixing a bug in nextauth
-    async session({session, user}: any) {
-      if (session && user) {
-        session.user.id = user.id;
-      }
-      return session;
-    }
-  }
+  // callbacks: {
+  //   // Usually not needed, here were are fixing a bug in nextauth
+  //   async session({session, user}: Record<string, unknown>) {
+  //     if (session && user) {
+  //       session.user.id = user.id;
+  //     }
+  //     return session;
+  //   }
+  // }
 })
