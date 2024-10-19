@@ -10,6 +10,7 @@ import {
 } from '@nextui-org/react'
 import * as actions from '@/actions';
 import { useFormState } from 'react-dom';
+import FormButton from '../common/form-button';
 
 export default function TopicCreateForm() {
   // initial state: won't have any field errors on initial render!
@@ -45,7 +46,9 @@ export default function TopicCreateForm() {
                 {formState.errors._form?.join(', ')}
               </div>
             ) : null}
-            <Button type="submit">Submit</Button>
+            <FormButton>
+              Submit
+            </FormButton>
           </div>
         </form>
       </PopoverContent>
