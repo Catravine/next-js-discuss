@@ -12,9 +12,13 @@ import {
 import * as actions from '@/actions'
 import FormButton from "../common/form-button";
 
-export default function PostCreateForm() {
+interface PostCreateFromProps {
+  slug: string;
+}
+
+export default function PostCreateForm({ slug }: PostCreateFromProps) {
   const [formState, action] = useFormState(
-    actions.createPost, {errors: {}}
+    actions.createPost.bind(null, slug), {errors: {}}
   )
 
   return (
